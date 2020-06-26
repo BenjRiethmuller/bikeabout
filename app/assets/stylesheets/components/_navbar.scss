@@ -1,12 +1,59 @@
-.navbar-lewagon {
+#navbar {
+  width: 100vw;
+  height: 70px;
+  background-color: white;
+  display: flex;
   justify-content: space-between;
-  background: white;
+  align-items: center;
 }
 
-.navbar-lewagon .navbar-collapse {
-  flex-grow: 0;
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 95%;
+  margin: auto;
 }
 
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
+.logo-type {
+  color: $bblue;
+  font-family: Racing Sans One;
+  font-size: 32px;
+  margin-bottom: none;
 }
+
+.login-signup {
+  display: flex
+}
+.sign-up-button {
+  color: white;
+  background-color: $bblue;
+  border-radius: 24px;
+  height: 15px;
+  width: 30px;
+  padding: 8px 16px;
+  margin-left: 8px;
+}
+
+.log-in-button {
+  color: $bblue;
+  background-color: white;
+  border: 1px solid $bblue;
+  border-radius: 24px;
+  padding: 8px 16px;
+  margin-left: 8px;
+}
+
+// .navbar-lewagon {
+//   justify-content: space-between;
+//   background: white;
+// }
+
+// .navbar-lewagon .navbar-collapse {
+//   flex-grow: 0;
+// }
+
+// .navbar-lewagon .navbar-brand img {
+//   width: 40px;
+// }
+
