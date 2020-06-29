@@ -1,1 +1,19 @@
 // Specific CSS for your home-page
+.banner-image {
+  background-image: image-url("photo-1507035895480-2b3156c31fc8.jpeg");
+  background-size: cover;
+  background-position: center;
+  height: 80vh;
+  text-align: center;
+}
+
+.banner-image h1 {
+  color: $bblue;
+  padding-top: 80px;
+}
+
+.featured-bikes h3 {
+  text-align: center;
+  color: $bblue;
+  margin-top: 40px;
+}
