@@ -9,5 +9,5 @@ class Bike < ApplicationRecord
   validates :address, presence: true
   validates :photo, presence: true
   validates :price, presence: true
-  has_many_attached :photos
+  has_one_attached :photo
 end
