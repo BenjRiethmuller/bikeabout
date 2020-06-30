@@ -1,9 +1,46 @@
 <div class="banner">
   <div class="banner-image">
-    <h1>Rent a bike from a local for your next holiday</h1>
+    <h1>Rent a bike and explore like a local!</h1>
   </div>
 </div>
 
-<div class="featured-bikes">
+<div class="featured-bikes-div">
   <h3>Featured bikes this week</h3>
+  <div class="featured-bikes">
+    <% bike_shuffle = @bikes.shuffle[0..2] %>
+    <% bike_shuffle.each do |bike| %>
+    <div class="featured-bike">
+      <%=  link_to (cl_image_tag bike.photo.key, height: 260, width: 380, crop: :fill, class: 'bike-image'), bike_path(bike) %>
+      <div class="bike-details">
+        <h5> <%= bike.name %> </h5>
+        <p> <%= bike.address %> </p>
+      </div>
+    </div>
+    <% end %>
+  </div>
+</div>
+
+<div class="how-it-works-div">
+  <h3>How it works</h3>
+  <div class="find-bike">
+    <%= image_tag ("location.jpeg"), class: "find-bike-image" %>
+    <div class="find-bike-text">
+      <h1><strong>Find a bike</strong></h1>
+      <p>Enter your destination and browse Bikeabout's wide selection of bikes.</p>
+    </div>
+  </div>
+  <div class="message-owner">
+    <div class="message-owner-text">
+      <h1><strong>Contact the owner</strong></h1>
+      <p>Contact the owner of the bike to agree on a price, pickup location and time.</p>
+    </div>
+    <%= image_tag ("message.jpeg"), class: "message-owner-image" %>
+  </div>
+  <div class="explore">
+    <%= image_tag ("explore.jpeg"), class: "explore-image" %>
+    <div class="explore-text">
+      <h1><strong>Explore the city</strong></h1>
+      <p>Enhance your holiday through cycling and experience the city like a local</p>
+    </div>
+  </div>
 </div>
