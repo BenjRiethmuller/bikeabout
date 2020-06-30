@@ -97,7 +97,7 @@ puts "Created #{new_user.username}"
 
 photo = URI.open('app/assets/images/double-basket-bike.jpg')
 new_bike = Bike.new do |b|
-  b.name = "Vintage green fixed gear"
+  b.name = "Bike with two baskets"
   b.category = "Commuting Bike"
   b.description = "A nice bike with two baskets. Great for exploring or going for a picnic!"
   b.address = "Vienna, Austria"

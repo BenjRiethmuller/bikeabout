@@ -1,6 +1,6 @@
-// Specific CSS for your home-page
+// BANNER
 .banner-image {
-  background-image: image-url("photo-1507035895480-2b3156c31fc8.jpeg");
+  background-image: image-url("blue-bike.jpeg");
   background-size: cover;
   background-position: center;
   height: 80vh;
@@ -12,8 +12,127 @@
   padding-top: 80px;
 }
 
-.featured-bikes h3 {
+// FEATURED BIKES
+.featured-bikes-div {
+  width: 100vw;
+}
+
+.featured-bikes-div h3 {
   text-align: center;
   color: $bblue;
   margin-top: 40px;
+}
+
+.featured-bikes {
+  display: flex;
+  width: 75vw;
+  margin: auto;
+  justify-content: space-between;
+  margin-top: 24px;
+  // flex-shrink: 1;
+  // flex-wrap: wrap;
+}
+
+.featured-bike {
+  border-radius: 16px 16px 16px 16px;
+  box-shadow: 2px 2px 4px $ggrey;
+}
+
+.bike-image {
+  border-radius: 16px 16px 0px 0px;
+}
+
+.bike-details {
+  background-color: white;
+  border-radius: 0px 0px 16px 16px;
+  padding: 8px 16px;
+}
+
+.bike-details p {
+  color: $ggrey;
+  margin-bottom: 0px;
+}
+
+.bike-details h5 {
+  margin-bottom: -2px;
+}
+
+// HOW IT WORKS
+.how-it-works-div {
+  width: 100vw;
+  background-color: $lblue;
+  padding-bottom: 24px;
+}
+
+.how-it-works-div h3 {
+  text-align: center;
+  color: $bblue;
+  margin-top: 40px;
+  padding-top: 32px;
+}
+
+.find-bike {
+  display: flex;
+  width: 860px;
+  margin: auto;
+  margin-bottom: 24px;
+  align-items: center;
+  // justify-content: center;
+}
+
+.find-bike h1 {
+  color: $bblue;
+}
+
+.find-bike-image {
+  width: 230px;
+  border: 1px solid $bblue;
+}
+
+.find-bike-text {
+  margin-left: 16px;
+}
+
+.message-owner {
+  display: flex;
+  width: 860px;
+  margin: auto;
+  margin-bottom: 24px;
+  align-items: center;
+  // justify-content: center;
+}
+
+.message-owner h1 {
+  color: $bblue;
+}
+
+.message-owner-image {
+  width: 230px;
+  border: 1px solid $bblue;
+}
+
+.message-owner-text {
+  margin-right: 16px;
+}
+
+.explore {
+  display: flex;
+  width: 860px;
+  margin: auto;
+  margin-bottom: 24px;
+  align-items: center;
+  // justify-content: center;
+}
+
+.explore h1 {
+  color: $bblue;
+}
+
+.explore-image {
+  width: 230px;
+  border: 1px solid $bblue;
+}
+
+.explore-text {
+  margin-left: 16px;
 }
