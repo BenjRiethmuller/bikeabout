@@ -1,3 +1,78 @@
 .filter-buttons {
   display: flex;
 }
+
+.filter-buttons p {
+  color: $ggrey;
+}
+
+.results-map-div {
+  display: flex;
+}
+
+.results-cards {
+  display: flex;
+  margin-bottom: 24px;
+  width: 600px;
+  height: 210px;
+  border-radius: 16px 16px 16px 16px;
+  box-shadow: 2px 2px 4px $ggrey;
+}
+
+.bike-result-cards {
+  padding-left: 16px;
+  padding-right: 0px;
+}
+
+.bike-results-div h3 {
+  margin-left: 18px;
+  margin-top: 48px;
+  color: $bblue;
+}
+
+.filter-buttons {
+  margin-left: 18px;
+  margin-bottom: 16px;
+}
+
+.bike-info {
+  position: relative;
+  width: 300px;
+  height: 210px;
+  padding: 16px 8px;
+  // border-radius: 0px 16px 16px 0px;
+  // box-shadow: 2px 2px 4px $ggrey;
+}
+
+.bike-index-image {
+  border-radius: 16px 0px 0px 16px;
+  // box-shadow: 2px 2px 4px $ggrey;
+}
+
+.bike-index-card {
+  border-radius: 16px 16px 16px 16px;
+  box-shadow: 2px 2px 4px $ggrey;
+}
+
+.bike-name-text {
+  font-weight: bolder;
+  margin-bottom: 0px;
+}
+
+.bike-location-text {
+  // margin-bottom: 0px;
+  color: $ggrey;
+}
+
+.bike-description-text {
+  color: $ggrey;
+}
+
+.bike-price-text {
+  position: absolute;
+  right: 8px;
+  bottom: -8px;
+  color: $ggrey;
+  font-weight: bolder;
+  text-align: right;
+}
