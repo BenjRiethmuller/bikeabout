@@ -9,21 +9,22 @@
 
   <div class="results-map-div">
     <div class="bike-result-cards col-lg-6">
-        <% @bikes.each do |bike| %>
-        <div class="results-cards">
-          <%= link_to (cl_image_tag bike.photo.key, height: 210, width: 300, crop: :fill, class: 'bike-index-image'), bike_path(bike)  %>
-          <div class="bike-info">
-            <p class="bike-name-text"> <%= bike.name %> </p>
-            <p class="bike-location-text"> <%= bike.address %></p>
-            <p class="bike-description-text"> <%= bike.description %></p>
-            <p class="bike-price-text"> <%= bike.price %>€/day</p>
-          </div>
+      <% @bikes.each do |bike| %>
+      <div class="results-cards">
+        <%= link_to (cl_image_tag bike.photo.key, height: 210, width: 300, crop: :fill, class: 'bike-index-image'), bike_path(bike)  %>
+        <div class="bike-info">
+          <p class="bike-name-text"> <%= bike.name %> </p>
+          <p class="bike-location-text"> <%= bike.address %></p>
+          <p class="bike-description-text"> <%= bike.description %></p>
+          <p class="bike-price-text"> <%= bike.price %>€/day</p>
         </div>
-        <% end %>
+      </div>
+      <% end %>
     </div>
 
-    <div class="bikes-map col-lg-6">
-
-    </div>
+    <div id="map"
+    style="width: 50%; height: 100vh;"
+    data-markers="<%= @markers.to_json %>"
+    data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
   </div>
 </div>

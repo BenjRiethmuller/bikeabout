@@ -25,6 +25,9 @@ gem 'redis', '~> 4.0'
 # Devise for user accounts
 gem 'devise'
 
+# geocoder
+gem 'geocoder'
+
 # cloudinary setup
 gem 'dotenv-rails', groups: [:development, :test]
 gem 'cloudinary', '~> 1.12.0'
