@@ -14,7 +14,7 @@ body {
 
 .banner-image h1 {
   color: $bblue;
-  padding-top: 80px;
+  padding-top: 160px;
 }
 
 // FEATURED BIKES
@@ -40,7 +40,7 @@ body {
 
 .featured-bike {
   border-radius: 16px 16px 16px 16px;
-  box-shadow: 2px 2px 4px $ggrey;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .bike-image {

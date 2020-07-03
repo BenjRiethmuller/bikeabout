@@ -13,7 +13,8 @@
       <%=  link_to (cl_image_tag bike.photo.key, height: 260, width: 380, crop: :fill, class: 'bike-image'), bike_path(bike) %>
       <div class="bike-details">
         <h5> <%= bike.name %> </h5>
-        <p> <%= bike.address %> </p>
+        <% split = bike.address.split(",") %>
+        <p> <%= split[1] %>,<%= split[3] %> </p>
       </div>
     </div>
     <% end %>
