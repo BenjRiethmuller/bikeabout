@@ -25,7 +25,7 @@ new_bike = Bike.new do |b|
   b.name = "Bike with a basket"
   b.category = "Road Bike"
   b.description = "Recently upgraded road bike with basket on the front"
-  b.address = "Berlin, Germany"
+  b.address = "Kottbusser Damm 9, Berlin, Berlin, Germany"
   b.price = 25
   b.user = new_user
   b.photo.attach(io: photo, filename: 'road-bike-with-basket.jpg', content_type: 'image/jpg')
@@ -50,7 +50,7 @@ new_bike = Bike.new do |b|
   b.name = "Green Racer"
   b.category = "Road Bike"
   b.description = "Nice new racing bike, rides really well."
-  b.address = "Naples, Italy"
+  b.address = "Via Speranzella 137, Naples, Campania, Italy"
   b.price = 20
   b.user = new_user
   b.photo.attach(io: photo, filename: 'green-racer.jpeg', content_type: 'image/jpeg')
@@ -75,7 +75,7 @@ new_bike = Bike.new do |b|
   b.name = "Vintage green fixed gear"
   b.category = "Fixed Gear"
   b.description = "Green fixed gear. Good for cruising around and seeing the city"
-  b.address = "Paris, France"
+  b.address = "38 Rue des Abbesses, Paris 18e Arrondissement, Île-de-France, France"
   b.price = 30
   b.user = new_user
   b.photo.attach(io: photo, filename: 'vintage-green-bike.jpg', content_type: 'image/jpg')
@@ -100,7 +100,7 @@ new_bike = Bike.new do |b|
   b.name = "Bike with two baskets"
   b.category = "Commuting Bike"
   b.description = "A nice bike with two baskets. Great for exploring or going for a picnic!"
-  b.address = "Vienna, Austria"
+  b.address = "Rechte Wienzeile 35, Vienna, Wien, Austria"
   b.price = 20
   b.user = new_user
   b.photo.attach(io: photo, filename: 'double-basket-bike.jpg', content_type: 'image/jpg')
@@ -125,7 +125,7 @@ new_bike = Bike.new do |b|
   b.name = "Old Dutch Bike"
   b.category = "Commuting Bike"
   b.description = "Dutch style bike. It rides really well. Recently serviced."
-  b.address = "Amsterdam, Netherlands"
+  b.address = "Stadhouderskade 78, Amsterdam, Noord-Holland, The Netherlands"
   b.price = 15
   b.user = new_user
   b.photo.attach(io: photo, filename: 'old-dutch-bike.jpg', content_type: 'image/jpg')
