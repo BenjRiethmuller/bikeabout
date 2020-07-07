@@ -1,0 +1,75 @@
+.name-price {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+  margin: auto;
+  // margin-left: 32px;
+  // margin-right: 32px;
+}
+
+.bike-image {
+  margin: auto;
+  // margin-left: 32px;
+  // margin-right: 32px;
+}
+
+.name-price h3 {
+  margin-top: 96px;
+}
+
+.bike-name-big {
+  color: $bblue;
+}
+
+.bike-price-big {
+  color: $ggrey;
+}
+
+.bike-show-image {
+  width: 100%;
+  border-radius: 24px;
+}
+
+.blue-bg {
+  background-color: $lblue;
+  padding-top: 48px;
+  padding-bottom: 48px;
+  margin-top: 48px;
+}
+
+.bike-information {
+  color: $ggrey;
+  margin: auto;
+  padding: 0px;
+  // margin-left: 32px;
+  // margin-right: 32px;
+}
+
+.user-image-bio {
+  display: flex;
+  align-items: center;
+}
+
+.about-owner {
+  padding-left: 16px;
+}
+
+.about-owner p {
+  margin-bottom: 0px;
+}
+
+.name-address {
+  display: flex;
+}
+
+.name-address p {
+  margin-bottom: 0px;
+}
+
+.bike-name-small {
+  font-weight: bolder;
+}
+
+.bike-address-small {
+  text-decoration: underline;
+}

@@ -1,0 +1,32 @@
+<div class="container">
+  <div class="name-price row col-lg-10">
+    <h3 class="bike-name-big"> <%= @bike.name %></h3>
+    <h3 class="bike-price-big"> <%= @bike.price %>€/day</h3>
+  </div>
+  <div class="bike-image row col-lg-10">
+    <%= cl_image_tag @bike.photo.key, width: 800, crop: :fill, class: 'bike-show-image' %>
+  </div>
+</div>
+
+<div class="blue-bg">
+  <div class="container">
+    <div class="bike-information row col-lg-10">
+      <div class="bike-user-info col-lg-8">
+        <div class="name-address">
+        <p class="bike-name-small"> <%= @bike.name %> - &nbsp;</p>
+        <p class="bike-address-small"> <% split = @bike.address.split(",") %> <%=  split[1]%>,<%= split[3] %></p>
+        </div>
+        <p class="bike-description"> <%= @bike.description %></p>
+        <hr>
+        <div class="user-image-bio">
+          <%= cl_image_tag @bike.user.photo.key, width: 80, height: 80, crop: :fill, class: 'avatar' %>
+          <div class="about-owner">
+            <p><strong> About the owner, <%= @bike.user.username %></strong> </p>
+            <p> <%= @bike.user.bio %></p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4"></div>
+    </div>
+  </div>
+</div>
