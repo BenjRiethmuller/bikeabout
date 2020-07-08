@@ -9,6 +9,8 @@
 
 .bike-image {
   margin: auto;
+  padding-left: 0px;
+  padding-right: 0px;
   // margin-left: 32px;
   // margin-right: 32px;
 }
@@ -50,6 +52,10 @@
   align-items: center;
 }
 
+.bike-user-info {
+  padding-left: 0px;
+}
+
 .about-owner {
   padding-left: 16px;
 }
@@ -72,4 +78,14 @@
 
 .bike-address-small {
   text-decoration: underline;
+}
+
+// DATE SELECTOR
+
+.date-selector {
+  background-color: white;
+  border-radius: 16px;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  padding-top: 15px;
+  padding-bottom: 15px;
 }
