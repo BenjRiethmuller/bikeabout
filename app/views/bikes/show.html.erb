@@ -26,19 +26,20 @@
           </div>
         </div>
       </div>
+        <% if current_user != @bike.user  %>
       <div id='bike-booking-dates' class=" date-selector col-lg-4" data-unavailable="<%= @bike.unavailable_dates.to_json %>">
-      <!-- ADD PRICE AND RATINGS -->
-        <% if current_user != @bike.user_id  %>
+        <!-- ADD PRICE AND RATINGS -->
         <%= simple_form_for [@bike, @booking] do |f| %>
         <%= f.input :start_date, class: "start_date", data: { behavior: "flatpickr" }, value: @start_date %>
         <%= f.input :end_date, class: "end_date", data: { behavior: "flatpickr" }, value: @end_date %>
-
         <% if user_signed_in? %>
-          <%= f.submit "Request Booking", class: 'booking-button' %>
-          <% else %>
-          <%= link_to "Login to request a booking", new_user_session_path, class: 'booking-button' %>
+        <%= f.submit "Request Booking", class: 'booking-button' %>
+        <% else %>
+        <%= link_to "Login to request a booking", new_user_session_path, class: 'booking-button' %>
         <% end %>
         <% end %>
+        <% else %>
+          <p>Hello</p>
         <% end %>
       </div>
     </div>
