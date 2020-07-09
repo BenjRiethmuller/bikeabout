@@ -27,7 +27,7 @@ import 'mapbox-gl/dist/mapbox-gl.css';
 
 // External imports
 import "bootstrap";
-import flatpickr from "flatpickr";
+// import flatpickr from "flatpickr";
 
 // Internal imports, e.g:
 import { initMapbox } from '../plugins/init_mapbox';

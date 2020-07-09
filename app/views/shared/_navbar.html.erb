@@ -1,15 +1,32 @@
 <div id="navbar">
   <div class="navbar-container">
-  <%= link_to "BIKEABOUT", root_path, class: "logo-type" %>
-
-  <div class="login-signup">
-    <div>
-      <%= link_to "Sign Up", new_user_registration_path, class: "sign-up-button"  %>
+    <%= link_to "BIKEABOUT", root_path, class: "logo-type" %>
+    <% if user_signed_in? %>
+    <div class="logged-in-btns">
+      <%= link_to "List a Bike", new_bike_path, class: "list-a-bike-button"  %>
+      <!-- <div class="avatar-dropdown"> -->
+        <div class="dropdown">
+        <button class="avatar-dropdown">
+          <p> <%= current_user.username %> </p>
+          <%= cl_image_tag current_user.photo.key, class: "avatar-navbar" %>
+        </button>
+        <div class="dropdown-content">
+          <%= link_to "Dashboard", dashboard_path %>
+          <%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
+        </div>
+        </div>
+      <!-- </div> -->
     </div>
-    <div>
-      <%= link_to "Login", new_user_session_path, class: "log-in-button"  %>
+    <% else %>
+    <div class="login-signup">
+      <div>
+        <%= link_to "Sign Up", new_user_registration_path, class: "sign-up-button"  %>
+      </div>
+      <div>
+        <%= link_to "Login", new_user_session_path, class: "log-in-button"  %>
+      </div>
     </div>
-  </div>
+    <% end %>
   </div>
 </div>
 
