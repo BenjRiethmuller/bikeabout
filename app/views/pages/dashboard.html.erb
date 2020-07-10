@@ -1,0 +1,45 @@
+<div class="container">
+  <div class="dashboard-div">
+    <div class="my-bikes col-lg-6">
+      <h3>My Bikes</h3>
+      <div class="bikes-toggle">
+        <p>All</p>
+        <p>Bookings</p>
+      </div>
+      <div class="my-bikes-all">
+        <% @booked_bikes.each do |bike|  %>
+        <div class="my-bikes-card">
+          <%= link_to (cl_image_tag bike.photo.key, height: 170, width: 240, crop: :fill, class: 'bike-db-image')  %>
+          <div class="bike-info-db">
+            <p class="bike-name-db"> <%= bike.name %> </p>
+            <p class="bike-location-db"> <% split = bike.address.split(",") %> <%= split[1]%>,<%= split[3] %></p>
+            <p> Available</p>
+            <p class="bike-price-db"> <%= bike.price %>€/day</p>
+          </div>
+        </div>
+        <% end %>
+      </div>
+    </div>
+    <div class="my-bookings col-lg-6">
+      <h3>My Bookings</h3>
+      <div class="bookings-toggle">
+        <p>Upcoming</p>
+        <p>Past</p>
+      </div>
+      <div class="my-bookings-upcoming">
+        <% @upcoming_bookings.each do |booking|  %>
+        <div class="my-bookings-card">
+          <%= link_to (cl_image_tag booking.bike.photo.key, height: 170, width: 240, crop: :fill, class: 'bike-db-image')  %>
+          <div class="bike-info-db">
+            <p class="bike-name-db"> <%= booking.bike.name %> </p>
+            <p class="bike-location-db"> <% split = booking.bike.address.split(",") %> <%= split[1]%>,<%= split[3] %></p>
+            <p class="bike-dates-db"> <%= booking.start_date %> to <%= booking.end_date %></p>
+            <!-- <p class="bike-price-db"> <%= booking.bike.price %>€/day</p> -->
+            <p class="bike-booking-status"> BOOKING <%= booking.status.capitalize %></p>
+          </div>
+        </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

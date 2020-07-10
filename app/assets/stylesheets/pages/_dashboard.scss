@@ -1,0 +1,77 @@
+.dashboard-div {
+  padding-top: 96px;
+  display: flex;
+  h3 {
+    color: $bblue;
+  }
+}
+
+.bikes-toggle {
+  display: flex;
+  p {
+    padding-right: 8px;
+  }
+}
+
+.my-bikes-card {
+  display: flex;
+  margin-bottom: 24px;
+  border-radius: 16px 16px 16px 16px;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  align-items: center;
+}
+
+.my-bookings-card {
+  display: flex;
+  position: relative;
+  margin-bottom: 24px;
+  border-radius: 16px 16px 16px 16px;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  align-items: center;
+}
+
+.bike-db-image {
+  border-radius: 16px 0px 0px 16px;
+}
+
+.bookings-toggle {
+  display: flex;
+  p {
+    padding-right: 8px;
+  }
+}
+
+.bike-info-db {
+  padding-left: 8px;
+  position: relative;
+}
+
+.bike-name-db {
+  font-weight: bolder;
+  margin-bottom: 0px;
+}
+
+.bike-location-db {
+  // margin-bottom: 0px;
+  color: $ggrey;
+}
+
+.bike-dates-db {
+  color: $ggrey;
+}
+
+.bike-price-db {
+  margin-bottom: 0px;
+  font-weight: bolder;
+  color: $ggrey;
+}
+
+.bike-booking-status {
+  // position: absolute;
+  // right: 8px;
+  // bottom: 20px;
+  margin-bottom: 0px;
+  font-weight: lighter;
+  text-transform: uppercase;
+  font-size: smaller;
+}
