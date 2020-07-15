@@ -33,6 +33,19 @@ end
 new_bike.save!
 puts "Created #{new_user.username}'s #{new_bike.name}!"
 
+photo = URI.open('app/assets/images/nice-hybrid-bike.jpeg')
+new_bike = Bike.new do |b|
+  b.name = "Nice hybrid bike"
+  b.category = "Road Bike"
+  b.description = "Really fun bike to ride, looks like a road bike but it is good for cruising around."
+  b.address = "Kottbusser Damm 9, Berlin, Berlin, Germany"
+  b.price = 20
+  b.user = new_user
+  b.photo.attach(io: photo, filename: 'nice-hybrid-bike.jpeg', content_type: 'image/jpeg')
+end
+new_bike.save!
+puts "Created #{new_user.username}'s #{new_bike.name}!"
+
 # creating asil
 photo = URI.open('app/assets/users/Asil.png')
 new_user = User.new do |u|
