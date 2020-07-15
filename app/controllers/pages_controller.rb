@@ -4,10 +4,18 @@ class PagesController < ApplicationController
   end
 
   def dashboard
+    # ALL MY BIKES
     @bikes = Bike.where(user_id: current_user)
-    @bookings = Booking.where(user_id: current_user)
-    # @booked_bikes = Bike.where(user_id: current_user) && Bike.where(:status == "Pending")
-    @upcoming_bookings = Booking.where('start_date >= ?', Date.today)
-    @past_bookings = Booking.where('end_date <= ?', Date.today)
+
+    # ALL MY BIKES WITH BOOKINGS
+    @booked_bikes = Bike.where(user_id: current_user).select do |bike|
+      bike.bookings.present?
+    end
+
+    # MY UPCOMING BOOKINGS OF OTHER PEOPLES BIKES
+    @upcoming_bikes = current_user.bookings.includes(:bike).where('start_date >= ?', Date.today)
+
+    # MY PAST BOOKINGS OF OTHER PEOPLES BIKES
+    @past_bikes = current_user.bookings.includes(:bike).where('end_date <= ?', Date.today)
   end
 end

@@ -30,3 +30,126 @@
   height: 48px;
   border-style: none;
 }
+
+
+
+.all-button {
+  border: none;
+  background-color: transparent;
+  padding: 0px;
+  margin-right: 8px;
+  margin-bottom: 16px;
+  font-weight: bolder;
+  color: black;
+  text-decoration: underline;
+}
+
+.all-button.disabled {
+  border: none;
+  background-color: transparent;
+  padding: 0px;
+  margin-right: 8px;
+  margin-bottom: 16px;
+  color: $ggrey;
+  font-weight: normal;
+  text-decoration: none;
+}
+
+
+
+.bookings-button {
+  border: none;
+  background-color: transparent;
+  padding: 0px;
+  margin-right: 8px;
+  margin-bottom: 16px;
+  color: $ggrey;
+}
+
+.bookings-button.active {
+  font-weight: bolder;
+  color: black;
+  text-decoration: underline;
+}
+
+
+
+.upcoming-button {
+  border: none;
+  background-color: transparent;
+  padding: 0px;
+  margin-right: 8px;
+  margin-bottom: 16px;
+  font-weight: bolder;
+  color: black;
+  text-decoration: underline;
+}
+
+.upcoming-button.disabled {
+  border: none;
+  background-color: transparent;
+  padding: 0px;
+  margin-right: 8px;
+  margin-bottom: 16px;
+  color: $ggrey;
+  font-weight: normal;
+  text-decoration: none;
+}
+
+
+
+.past-button {
+    border: none;
+    background-color: transparent;
+    padding: 0px;
+    margin-right: 8px;
+    margin-bottom: 16px;
+    color: $ggrey;
+}
+
+.past-button.active {
+  font-weight: bolder;
+  color: black;
+  text-decoration: underline;
+}
+// .bikes-toggle button {
+//   border: none;
+//   background-color: transparent;
+//   padding: 0px;
+//   margin-right: 8px;
+//   margin-bottom: 16px;
+//   color: $ggrey;
+// }
+
+// .all-button:active {
+//   font-weight: bolder;
+//   color: black;
+//   text-decoration: underline;
+// }
+
+// .bookings-button:active {
+//   font-weight: bolder;
+//   color: black;
+//   text-decoration: underline;
+// }
+
+// .bookings-toggle button {
+//   border: none;
+//   background-color: transparent;
+//   padding: 0px;
+//   margin-right: 8px;
+//   margin-bottom: 16px;
+//   color: $ggrey;
+// }
+
+// .upcoming-button:active {
+//   font-weight: bolder;
+//   color: black;
+//   text-decoration: underline;
+// }
+
+// .past-button:active {
+//   font-weight: bolder;
+//   color: black;
+//   text-decoration: underline;
+// }

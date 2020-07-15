@@ -8,6 +8,7 @@
 
 .bikes-toggle {
   display: flex;
+  padding-left: 2px;
   p {
     padding-right: 8px;
   }
@@ -36,6 +37,7 @@
 
 .bookings-toggle {
   display: flex;
+  padding-left: 2px;
   p {
     padding-right: 8px;
   }
@@ -74,4 +76,40 @@
   font-weight: lighter;
   text-transform: uppercase;
   font-size: smaller;
+}
+
+
+
+.my-bikes-all {
+  display: initial;
+}
+
+.my-bikes-all.disabled {
+  display: none;
+}
+
+.my-bikes-bookings {
+  display: none;
+}
+
+.my-bikes-bookings.active {
+  display: initial;
+}
+
+
+
+.my-bookings-upcoming {
+  display: initial;
+}
+
+.my-bookings-upcoming.disabled {
+  display: none;
+}
+
+.my-bookings-past {
+  display: none;
+}
+
+.my-bookings-past.active {
+  display: initial;
 }
