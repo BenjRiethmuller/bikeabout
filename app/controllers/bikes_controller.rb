@@ -2,7 +2,12 @@ class BikesController < ApplicationController
   before_action :set_bike, only: [:show, :edit, :update, :destroy]
 
   def index
-    @bikes = Bike.geocoded
+
+    if params[:query].present?
+      @bikes = Bike.search_by_address(params[:query])
+    else
+      @bikes = Bike.geocoded
+    end
 
     @markers = @bikes.map do |bike|
       {

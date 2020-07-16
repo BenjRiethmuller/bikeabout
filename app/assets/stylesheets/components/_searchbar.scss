@@ -1,0 +1,24 @@
+.searchbar {
+  margin: auto;
+}
+
+.searchbar-bar {
+  position: relative;
+  width: 100%;
+  border: none;
+  border-radius: 32px;
+  height: 56px;
+  padding-left: 24px;
+}
+
+.searchbar-button {
+  background-color: $bblue;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 24px;
+  border: none;
+  position: absolute;
+  right: 24px;
+  top: 8px;
+}
+
