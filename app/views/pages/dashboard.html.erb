@@ -72,10 +72,10 @@
 </div>
 
 <script>
-  const clickBookings = document.querySelector('.bookings-button');
-  const clickAll = document.querySelector('.all-button');
-  const myBikesAll = document.querySelector('.my-bikes-all')
-  const myBikesBookings = document.querySelector('.my-bikes-bookings')
+  let clickBookings = document.querySelector('.bookings-button');
+  let clickAll = document.querySelector('.all-button');
+  let myBikesAll = document.querySelector('.my-bikes-all')
+  let myBikesBookings = document.querySelector('.my-bikes-bookings')
 
   clickBookings.addEventListener("click", (event) => {
       if(clickBookings.classList.contains("active")) {
@@ -107,10 +107,10 @@
 </script>
 
 <script>
-  const clickPast = document.querySelector('.past-button');
-  const clickUpcoming = document.querySelector('.upcoming-button');
-  const myBookingsUpcoming = document.querySelector('.my-bookings-upcoming')
-  const myBookingsPast = document.querySelector('.my-bookings-past')
+  let clickPast = document.querySelector('.past-button');
+  let clickUpcoming = document.querySelector('.upcoming-button');
+  let myBookingsUpcoming = document.querySelector('.my-bookings-upcoming')
+  let myBookingsPast = document.querySelector('.my-bookings-past')
 
   clickPast.addEventListener("click", (event) => {
       if(clickPast.classList.contains("active")) {
