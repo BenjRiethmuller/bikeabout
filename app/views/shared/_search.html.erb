@@ -1,0 +1,8 @@
+<%= form_tag bikes_path, class: "searchbar col-lg-6", method: :get do %>
+  <%= text_field_tag :query,
+    params[:query],
+    class: "searchbar-bar",
+    placeholder: "Search for a city"
+  %>
+  <%= submit_tag "Search", class: "searchbar-button" %>
+<% end %>

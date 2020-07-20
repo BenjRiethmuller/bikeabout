@@ -14,9 +14,16 @@ class Bike < ApplicationRecord
   validates :price, presence: true
   has_one_attached :photo
 
+  include PgSearch::Model
+  pg_search_scope :search_by_address,
+  against: [ :address ],
+  using: {
+    tsearch: { prefix: true }
+  }
+
   def unavailable_dates
-    bookings.pluck(:start_date, :end_date).map do |range|
-      { from: range[0], to: range[1] }
-    end
+   bookings.pluck(:start_date, :end_date).map do |range|
+    { from: range[0], to: range[1] }
+  end
   end
 end
