@@ -31,6 +31,9 @@ gem 'geocoder'
 # search
 gem 'pg_search', '~> 2.3.0'
 
+# # algolia search
+# gem "algoliasearch-rails"
+
 # cloudinary setup
 gem 'dotenv-rails', groups: [:development, :test]
 gem 'cloudinary', '~> 1.12.0'
