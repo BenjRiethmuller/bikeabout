@@ -1,25 +1,19 @@
 <div class="container">
   <div class="new-bike-form col-lg-8">
-  <h3>List a bike to rent</h3>
-  <%= simple_form_for(@bike) do |f| %>
-  <%= f.input :name, :placeholder => 'e.g. Red racing bike' %>
-  <%= f.input :description, :placeholder => 'e.g. Recently serviced road bike with 55cm frame' %>
-  <%= f.input :category, prompt: 'Select category', :collection => ["Mountain Bike", "Road Bike", "BMX", "Commuting Bike", "Fixed Gear", "Tandem", "Tricycle", "Kids Bike"] %>
-  <%= f.input :address, input_html: { id: "address-field" } %>
-  <%= f.input :price, :label => "Price per day (€)", input_html: { min: '0', step: 'any' } %>
-  <%= f.input :photo, as: :file %>
-  <%= f.submit %>
-  <% end %>
+    <h3>List a bike to rent</h3>
+    <%= simple_form_for(@bike) do |f| %>
+    <%= f.input :name, :placeholder => 'e.g. Red racing bike' %>
+    <%= f.input :description, :placeholder => 'e.g. Recently serviced road bike with 55cm frame' %>
+    <%= f.input :category, prompt: 'Select category', :collection => ["Mountain Bike", "Road Bike", "BMX", "Commuting Bike", "Fixed Gear", "Tandem", "Tricycle", "Kids Bike"] %>
+    <%= f.input :address, input_html: { id: "address-field" } %>
+    <%= f.input :price, :label => "Price per day (€)", input_html: { min: '0', step: 'any' } %>
+    <label class="photo-upload-button">
+      <p>Upload a photo</p>
+      <span style="display:none;">
+        <%= f.input :photo, as: :file, class: 'hidden' %>
+      </span>
+    </label>
+    <%= f.button :submit, class: "create-bike-button" %>
+    <% end %>
   </div>
 </div>
-
-<!-- <script src="https://cdn.jsdelivr.net/npm/places.js@1.19.0"></script>
-<script>
-  const options = {
-    appId: 'plSCTRJPJX76',
-    apiKey: '493190a840549fb94a1390d1a7e58040',
-    container: document.getElementById('address-field'),
-    // type: 'address',
-  };
-  places(options);
-</script> -->
