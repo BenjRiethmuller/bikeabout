@@ -27,6 +27,7 @@ import 'mapbox-gl/dist/mapbox-gl.css';
 
 // External imports
 import "bootstrap";
+
 // import flatpickr from "flatpickr";
 
 // Internal imports, e.g:
@@ -34,6 +35,7 @@ import { initMapbox } from '../plugins/init_mapbox';
 import { initFlatpickr } from '../plugins/init_flatpickr';
 import { initToggle } from '../plugins/init_toggle';
 import { initPlaces } from '../plugins/init_places';
+
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
