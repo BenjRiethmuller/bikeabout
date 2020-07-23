@@ -30,7 +30,7 @@ class BikesController < ApplicationController
     @bike = Bike.new(bike_params)
     @bike.user = current_user
     if @bike.save
-      redirect_to bike_path(@bike)
+      redirect_to bike_path(@bike), notice: 'Your bike has been listed!'
     else
       render :new
     end
@@ -45,12 +45,13 @@ class BikesController < ApplicationController
 
   def destroy
     @bike.destroy
+    redirect_to dashboard_path
   end
 
   private
 
   def bike_params
-    params.require(:bike).permit(:name, :description, :category, :address, :price)
+    params.require(:bike).permit(:name, :description, :category, :address, :photo, :price)
   end
 
   def set_bike
