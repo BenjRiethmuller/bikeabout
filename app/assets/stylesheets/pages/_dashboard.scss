@@ -14,6 +14,14 @@
   }
 }
 
+.remove-bike-button {
+  margin-bottom: 0px;
+  font-weight: lighter;
+  text-transform: uppercase;
+  font-size: smaller;
+  color: $rred;
+}
+
 .my-bikes-card {
   display: flex;
   margin-bottom: 24px;
@@ -23,9 +31,13 @@
 }
 
 .bike-card-subhead {
-  p {
     margin-bottom: 0px;
-  }
+    text-decoration: underline;
+}
+
+.total-price-div {
+  display: flex;
+  justify-content: space-between;
 }
 
 .my-bookings-card {
@@ -57,6 +69,7 @@
 .bike-name-db {
   font-weight: bolder;
   margin-bottom: 0px;
+  text-decoration: underline;
 }
 
 .bike-location-db {
@@ -69,6 +82,12 @@
 }
 
 .bike-price-db {
+  // margin-bottom: 0px;
+  font-weight: bolder;
+  color: $ggrey;
+}
+
+.bike-dayprice-db {
   margin-bottom: 0px;
   font-weight: bolder;
   color: $ggrey;
@@ -84,6 +103,29 @@
   font-size: smaller;
 }
 
+.book-again-button {
+  margin-bottom: 0px;
+  font-weight: lighter;
+  text-transform: uppercase;
+  font-size: smaller;
+  color: $ggrey;
+}
+
+.bike-status-declined {
+  margin-bottom: 0px;
+  font-weight: lighter;
+  text-transform: uppercase;
+  font-size: smaller;
+  color: $rred;
+}
+
+.bike-status-accepted {
+  margin-bottom: 0px;
+  font-weight: lighter;
+  text-transform: uppercase;
+  font-size: smaller;
+  color: $ggreen;
+}
 
 
 .my-bikes-all {

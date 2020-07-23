@@ -9,12 +9,12 @@
       <div class="my-bikes-all">
         <% @bikes.each do |bike|  %>
         <div class="my-bikes-card">
-          <%= link_to (cl_image_tag bike.photo.key, height: 170, width: 240, crop: :fill, class: 'bike-db-image')  %>
+          <%= link_to (cl_image_tag bike.photo.key, height: 152, width: 240, crop: :fill, class: 'bike-db-image')  %>
           <div class="bike-info-db">
             <p class="bike-name-db"> <%= bike.name %> </p>
             <p class="bike-location-db"> <% split = bike.address.split(",") %> <%= split[1]%>,<%= split[3] %></p>
-            <p> Available</p>
             <p class="bike-price-db"> <%= bike.price %>€/day</p>
+            <%= link_to 'Remove Bike', bike_path(bike), class: 'remove-bike-button', method: :delete, data: {confirm: "Are you sure you want to remove this bike?"}  %>
           </div>
         </div>
         <% end %>
@@ -22,13 +22,52 @@
       <div class="my-bikes-bookings">
         <% @booked_bikes.each do |bike|  %>
         <div class="my-bikes-card">
-          <%= link_to (cl_image_tag bike.photo.key, height: 170, width: 240, crop: :fill, class: 'bike-db-image')  %>
+          <% if bike.bookings[0].status == "Accepted" %>
+          <%= link_to (cl_image_tag bike.photo.key, height: 240, width: 240, crop: :fill, class: 'bike-db-image')  %>
           <div class="bike-info-db">
             <p class="bike-name-db"> <%= bike.name %> </p>
             <p class="bike-location-db"> <% split = bike.address.split(",") %> <%= split[1]%>,<%= split[3] %></p>
+            <p class="bike-card-subhead">Booking dates:</p>
             <p class="bike-dates-db"> <%= bike.bookings[0].start_date %> to <%= bike.bookings[0].end_date %></p>
-            <p class="bike-price-db"> <%= bike.price %>€/day</p>
+            <div class="total-price-div">
+              <p class="bike-dayprice-db">Total price:</p>
+              <p class="bike-dayprice-db"> <%= bike.price %>€/day</p>
+            </div>
+            <hr>
+            <p class="bike-status-accepted">Booking accepted</p>
           </div>
+
+          <% elsif bike.bookings[0].status == "Declined" %>
+          <%= link_to (cl_image_tag bike.photo.key, height: 240, width: 240, crop: :fill, class: 'bike-db-image')  %>
+          <div class="bike-info-db">
+            <p class="bike-name-db"> <%= bike.name %> </p>
+            <p class="bike-location-db"> <% split = bike.address.split(",") %> <%= split[1]%>,<%= split[3] %></p>
+            <p class="bike-card-subhead">Booking dates:</p>
+            <p class="bike-dates-db"> <%= bike.bookings[0].start_date %> to <%= bike.bookings[0].end_date %></p>
+            <div class="total-price-div">
+              <p class="bike-dayprice-db">Total price:</p>
+              <p class="bike-dayprice-db"> <%= bike.price %>€/day</p>
+            </div>
+            <hr>
+            <p class="bike-status-declined">You declined this booking</p>
+          </div>
+
+          <% else %>
+          <%= link_to (cl_image_tag bike.photo.key, height: 240, width: 240, crop: :fill, class: 'bike-db-image')  %>
+          <div class="bike-info-db">
+            <p class="bike-name-db"> <%= bike.name %> </p>
+            <p class="bike-location-db"> <% split = bike.address.split(",") %> <%= split[1]%>,<%= split[3] %></p>
+            <p class="bike-card-subhead">Booking dates:</p>
+            <p class="bike-dates-db"> <%= bike.bookings[0].start_date %> to <%= bike.bookings[0].end_date %></p>
+            <div class="total-price-div">
+              <p class="bike-dayprice-db">Total price:</p>
+              <p class="bike-dayprice-db"> <%= bike.price %>€/day</p>
+            </div>
+            <hr>
+            <%= link_to "Accept", booking_path(id: bike.bookings[0].id, booking: {status: "Accepted"}), class: "bike-status-accepted", method: :patch %>
+            <%= link_to "Decline", booking_path(id: bike.bookings[0].id, booking: {status: "Declined"}), class: "bike-status-declined", method: :patch %>
+          </div>
+          <% end %>
         </div>
         <% end %>
       </div>
@@ -42,27 +81,72 @@
       <div class="my-bookings-upcoming">
         <% @upcoming_bikes.each do |booking|  %>
         <div class="my-bookings-card">
-          <%= link_to (cl_image_tag booking.bike.photo.key, height: 170, width: 240, crop: :fill, class: 'bike-db-image')  %>
+
+          <% if booking.status == "Accepted" %>
+          <%= link_to (cl_image_tag booking.bike.photo.key, height: 240, width: 240, crop: :fill, class: 'bike-db-image')  %>
           <div class="bike-info-db">
             <p class="bike-name-db"> <%= booking.bike.name %> </p>
             <p class="bike-location-db"> <% split = booking.bike.address.split(",") %> <%= split[1]%>,<%= split[3] %></p>
+            <p class="bike-card-subhead">Booking dates:</p>
             <p class="bike-dates-db"> <%= booking.start_date %> to <%= booking.end_date %></p>
-            <!-- <p class="bike-price-db"> <%= booking.bike.price %>€/day</p> -->
+            <div class="total-price-div">
+              <p class="bike-dayprice-db">Total price:</p>
+              <p class="bike-dayprice-db"> <%= booking.bike.price %>€/day</p>
+            </div>
+            <hr>
+            <p class="bike-status-accepted"> BOOKING <%= booking.status.capitalize %></p>
+          </div>
+
+          <% elsif booking.status == "Declined" %>
+          <%= link_to (cl_image_tag booking.bike.photo.key, height: 240, width: 240, crop: :fill, class: 'bike-db-image')  %>
+          <div class="bike-info-db">
+            <p class="bike-name-db"> <%= booking.bike.name %> </p>
+            <p class="bike-location-db"> <% split = booking.bike.address.split(",") %> <%= split[1]%>,<%= split[3] %></p>
+            <p class="bike-card-subhead">Booking dates:</p>
+            <p class="bike-dates-db"> <%= booking.start_date %> to <%= booking.end_date %></p>
+            <div class="total-price-div">
+              <p class="bike-dayprice-db">Total price:</p>
+              <p class="bike-dayprice-db"> <%= booking.bike.price %>€/day</p>
+            </div>
+            <hr>
+            <p class="bike-status-declined"> BOOKING <%= booking.status.capitalize %></p>
+          </div>
+
+          <% else %>
+          <%= link_to (cl_image_tag booking.bike.photo.key, height: 240, width: 240, crop: :fill, class: 'bike-db-image')  %>
+          <div class="bike-info-db">
+            <p class="bike-name-db"> <%= booking.bike.name %> </p>
+            <p class="bike-location-db"> <% split = booking.bike.address.split(",") %> <%= split[1]%>,<%= split[3] %></p>
+            <p class="bike-card-subhead">Booking dates:</p>
+            <p class="bike-dates-db"> <%= booking.start_date %> to <%= booking.end_date %></p>
+            <div class="total-price-div">
+              <p class="bike-dayprice-db">Total price:</p>
+              <p class="bike-dayprice-db"> <%= booking.bike.price %>€/day</p>
+            </div>
+            <hr>
             <p class="bike-booking-status"> BOOKING <%= booking.status.capitalize %></p>
           </div>
+          <% end %>
         </div>
         <% end %>
       </div>
       <div class="my-bookings-past">
         <% @past_bikes.each do |booking|  %>
         <div class="my-bookings-card">
-          <%= link_to (cl_image_tag booking.bike.photo.key, height: 170, width: 240, crop: :fill, class: 'bike-db-image')  %>
+          <%= link_to (cl_image_tag booking.bike.photo.key, height: 240, width: 240, crop: :fill, class: 'bike-db-image')  %>
           <div class="bike-info-db">
             <p class="bike-name-db"> <%= booking.bike.name %> </p>
             <p class="bike-location-db"> <% split = booking.bike.address.split(",") %> <%= split[1]%>,<%= split[3] %></p>
+            <p class="bike-card-subhead">Booking dates:</p>
             <p class="bike-dates-db"> <%= booking.start_date %> to <%= booking.end_date %></p>
+            <div class="total-price-div">
+              <p class="bike-dayprice-db">Total price:</p>
+              <p class="bike-dayprice-db"> <%= booking.bike.price %>€/day</p>
+            </div>
+            <hr>
             <!-- <p class="bike-price-db"> <%= booking.bike.price %>€/day</p> -->
-            <p class="bike-booking-status"> BOOKING <%= booking.status.capitalize %></p>
+            <!-- <p class="bike-booking-status"> BOOKING <%= booking.status.capitalize %></p> -->
+            <%= link_to 'Book again', bike_path(id: booking.bike.id), class: "book-again-button"  %>
           </div>
         </div>
         <% end %>
