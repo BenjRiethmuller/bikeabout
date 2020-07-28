@@ -21,6 +21,7 @@
       </div>
       <div class="my-bikes-bookings">
         <% @booked_bikes.each do |bike|  %>
+
         <div class="my-bikes-card">
           <% if bike.bookings[0].status == "Accepted" %>
           <%= link_to (cl_image_tag bike.photo.key, height: 240, width: 240, crop: :fill, class: 'bike-db-image')  %>
@@ -36,6 +37,7 @@
             <hr>
             <p class="bike-status-accepted">Booking accepted</p>
           </div>
+
 
           <% elsif bike.bookings[0].status == "Declined" %>
           <%= link_to (cl_image_tag bike.photo.key, height: 240, width: 240, crop: :fill, class: 'bike-db-image')  %>
@@ -67,6 +69,7 @@
             <%= link_to "Accept", booking_path(id: bike.bookings[0].id, booking: {status: "Accepted"}), class: "bike-status-accepted", method: :patch %>
             <%= link_to "Decline", booking_path(id: bike.bookings[0].id, booking: {status: "Declined"}), class: "bike-status-declined", method: :patch %>
           </div>
+
           <% end %>
         </div>
         <% end %>
