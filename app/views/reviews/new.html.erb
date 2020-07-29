@@ -1,0 +1,21 @@
+<div class="review col-lg-10">
+
+<div class="review-page">
+  <div class="bike-info-review col-lg-8">
+    <div class="bike-image row">
+      <%= cl_image_tag @bike.photo.key, width: 800, crop: :fill, class: 'bike-show-image' %>
+    </div>
+  </div>
+
+  <div class="review-form col-lg-4">
+    <h5>Your review of <%= @bike.name %></h5>
+    <!-- <%= @bike.description %> -->
+    <hr>
+    <%= simple_form_for [ @bike, @review ] do |f| %>
+    <%= f.input :description, :as => :text, :input_html => {:rows => 5} %>
+    <%= f.input :rating, as: :radio_buttons, :collection => [1, 2, 3, 4, 5], wrapper: :vertical_collection_inline %>
+    <%= f.submit "Submit review", class: "create-bike-button" %>
+    <% end %>
+  </div>
+</div>
+</div>

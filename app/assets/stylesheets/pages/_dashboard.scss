@@ -111,6 +111,11 @@
   color: $ggrey;
 }
 
+.book-again-review {
+  display: flex;
+  justify-content: space-between;
+}
+
 .bike-status-declined {
   margin-bottom: 0px;
   font-weight: lighter;

@@ -89,3 +89,52 @@
   padding-top: 15px;
   padding-bottom: 15px;
 }
+
+// REVIEWS SECTION
+
+.review-container {
+  margin: auto;
+  padding-left: 0px;
+  padding-right: 0px;
+  margin-bottom: 48px;
+}
+
+.review-header h3 {
+  margin-top: 48px;
+  color: $bblue;
+}
+
+.bike-reviews {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 16px;
+}
+
+.review-tile {
+  display: flex;
+  padding-left: 0px;
+}
+
+.review-name-date-stars {
+  display: flex;
+  justify-content: space-between;
+}
+
+.review-name-date {
+  display: flex;
+}
+
+.review-content {
+  padding-left: 16px;
+  width: 100%;
+  p {
+    margin-bottom: 0px;
+  }
+}
+
+.review-stars {
+  color: $orange;
+  i {
+    padding-right: 4px;
+  }
+}
