@@ -13,7 +13,7 @@
     <div class="bike-information row col-lg-10">
       <div class="bike-user-info col-lg-8">
         <div class="name-address">
-          <p class="bike-name-small"> <%= @bike.name %> - &nbsp;</p>
+          <p class="bike-name-small"> <%= @bike.name %> -&nbsp;</p>
           <p class="bike-address-small"> <% split = @bike.address.split(",") %> <%=  split[1]%>,<%= split[3] %></p>
         </div>
         <p class="bike-description"> <%= @bike.description %></p>
@@ -26,7 +26,7 @@
           </div>
         </div>
       </div>
-        <% if current_user != @bike.user  %>
+      <% if current_user != @bike.user  %>
       <div id='bike-booking-dates' class=" date-selector col-lg-4" data-unavailable="<%= @bike.unavailable_dates.to_json %>">
         <!-- ADD PRICE AND RATINGS -->
         <%= simple_form_for [@bike, @booking] do |f| %>
@@ -39,9 +39,34 @@
         <% end %>
         <% end %>
         <% else %>
-          <p>Hello</p>
+        <p>Hello</p>
         <% end %>
       </div>
     </div>
+  </div>
+</div>
+<div class="container">
+  <div class="review-container col-lg-10">
+    <div class="review-header">
+      <h3>Reviews</h3>
+    </div>
+    <div class="bike-reviews">
+      <% @bike.reviews.order(created_at: :desc).each do |review| %>
+      <div class="review-tile">
+        <%= cl_image_tag review.user.photo.key, width: 80, height: 80, crop: :fill, class: 'avatar' %>
+        <div class="review-content">
+          <div class="review-name-date-stars">
+            <div class="review-name-date">
+            <p><strong> <%= review.user.username %> -&nbsp;</strong></p>
+            <p> <%= review.created_at %> </p>
+          </div>
+          <div class="review-stars">
+            <i class="fas fa-star"></i><%= review.rating %>
+          </div>
+        </div>
+          <p> <%= review.description %> </p>
+      </div>
+    </div>
+      <% end %>
   </div>
 </div>
