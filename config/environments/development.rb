@@ -13,7 +13,7 @@ Rails.application.configure do
   config.consider_all_requests_local = true
 
   #config for chatrooms
-  config.action_cable.url = "ws://localhost:3000/cable"
+  # config.action_cable.url = "ws://localhost:3000/cable"
 
   # Enable/disable caching. By default caching is disabled.
   # Run rails dev:cache to toggle caching.
