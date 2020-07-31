@@ -13,8 +13,4 @@ class User < ApplicationRecord
   has_many :bikes, dependent: :destroy
 
   has_many :bookings, dependent: :destroy
-
-  has_many :messages
-  has_many :conversations
-  has_many :chatrooms, through: :messages
 end

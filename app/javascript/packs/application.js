@@ -35,8 +35,6 @@ import { initMapbox } from '../plugins/init_mapbox';
 import { initFlatpickr } from '../plugins/init_flatpickr';
 import { initToggle } from '../plugins/init_toggle';
 import { initPlaces } from '../plugins/init_places';
-import '../components/message-form.js';
-import '../components/messages.js';
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
