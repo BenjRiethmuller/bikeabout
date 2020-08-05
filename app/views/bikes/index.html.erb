@@ -1,3 +1,7 @@
+<% if @bikes.count == 0 %>
+<h3 class="no-results">Sorry, no bikes available in that location!</h3>
+<%= image_tag ("no-results.jpg"), class: "no-results-image" %>
+<% else %>
 <div class="index-container">
   <div class="bike-results-div col-lg-5">
     <h3> Found <%= @bikes.count %> bikes</h3>
@@ -26,8 +30,11 @@
   </div>
   <div class="map-div">
   <div id="map"
+  style=" height: calc(100vh - 70px); width: calc(100vw * (7 / 12));"
   data-markers="<%= @markers.to_json %>"
   data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
 </div>
 </div>
+
+<% end %>
 </div>
