@@ -63,13 +63,15 @@
 
 .bike-info-db {
   padding-left: 8px;
+  padding-right: 8px;
   position: relative;
+  width: 286px;
 }
 
 .bike-name-db {
-  font-weight: bolder;
+  // font-weight: bolder;
   margin-bottom: 0px;
-  text-decoration: underline;
+  // text-decoration: underline;
 }
 
 .bike-location-db {
@@ -122,6 +124,7 @@
   text-transform: uppercase;
   font-size: smaller;
   color: $rred;
+  padding-right: 8px;
 }
 
 .bike-status-accepted {
@@ -130,8 +133,8 @@
   text-transform: uppercase;
   font-size: smaller;
   color: $ggreen;
+  padding-right: 8px;
 }
-
 
 .my-bikes-all {
   display: initial;
