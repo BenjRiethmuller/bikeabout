@@ -39,12 +39,13 @@
         <% end %>
         <% end %>
         <% else %>
-        <p>Hello</p>
+        <p>Need to put something here..</p>
         <% end %>
       </div>
     </div>
   </div>
 </div>
+<% if @bike.reviews.exists? %>
 <div class="container">
   <div class="review-container col-lg-10">
     <div class="review-header">
@@ -69,4 +70,6 @@
     </div>
       <% end %>
   </div>
+</div>
+<% end %>
 </div>
