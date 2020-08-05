@@ -1,3 +1,14 @@
+// .index-container {
+//   padding-top: 70px;
+//   height: calc(100vh - 70px);
+// }
+
+.no-results {
+  padding-top: 160px;
+  color: $bblue;
+  text-align: center;
+}
+
 .filter-buttons {
   display: flex;
 }
@@ -30,7 +41,7 @@
 
 .bike-results-div h3 {
   margin-left: 14px;
-  margin-top: 96px;
+  padding-top: 96px;
   color: $bblue;
 }
 
@@ -86,16 +97,27 @@
 }
 
 #map {
-  // position: absolute;
-  height: 100vh;
-  width: 100vw;
-  position: sticky;
-  top: 0;
-  right: 0;
+  position: fixed;
+  height: calc(100vh - 70px);
+  // width: 100%;
+  bottom: 0;
+  // display: block;
+  // right: 0;
   z-index: 99;
 }
 
 .map-div {
   position: relative;
-  z-index: 1;
+//   z-index: 1;
+  // padding: 0px;
+//   width: 58%;
+}
+
+.no-results-image {
+  width: 320px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 24px;
+  // border: 1px solid $bblue;
 }

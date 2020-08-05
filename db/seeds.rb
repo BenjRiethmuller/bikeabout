@@ -46,6 +46,31 @@ end
 new_bike.save!
 puts "Created #{new_user.username}'s #{new_bike.name}!"
 
+# creating sebi
+photo = URI.open('app/assets/users/Sebi.png')
+new_user = User.new do |u|
+  u.email = 'sebi@sebi.com'
+  u.password = 'sebi1234'
+  u.username = 'Sebi'
+  u.bio = "Give me any bike and I'll ride it so fast into the Spree yew!"
+  u.photo.attach(io: photo, filename: 'Sebi.png', content_type: 'image/png')
+end
+new_user.save!
+puts "Created #{new_user.username}"
+
+photo = URI.open('app/assets/images/tricycle.jpg')
+new_bike = Bike.new do |b|
+  b.name = "Little tricycle"
+  b.category = "Kids Bike"
+  b.description = "My sons rusty red tricycle. Good for kids, goes pretty fast down hills. Kinda hard to stop..."
+  b.address = "Revaler Straße 1, Berlin, Berlin, Germany"
+  b.price = 10
+  b.user = new_user
+  b.photo.attach(io: photo, filename: 'tricycle.jpg', content_type: 'image/jpeg')
+end
+new_bike.save!
+puts "Created #{new_user.username}'s #{new_bike.name}!"
+
 # creating asil
 photo = URI.open('app/assets/users/Asil.png')
 new_user = User.new do |u|
