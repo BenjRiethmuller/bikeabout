@@ -30,8 +30,8 @@
       <div id='bike-booking-dates' class=" date-selector col-lg-4" data-unavailable="<%= @bike.unavailable_dates.to_json %>">
         <!-- ADD PRICE AND RATINGS -->
         <%= simple_form_for [@bike, @booking] do |f| %>
-        <%= f.input :start_date, class: "start_date", data: { behavior: "flatpickr" }, value: @start_date %>
-        <%= f.input :end_date, class: "end_date", data: { behavior: "flatpickr" }, value: @end_date %>
+        <%= f.input :start_date, as: :string, type: :text, :placeholder => 'Select date', class: "start_date" %>
+        <%= f.input :end_date, as: :string, type: :text, :placeholder => 'Select date', class: "end_date" %>
         <% if user_signed_in? %>
         <%= f.submit "Request Booking", class: 'booking-button' %>
         <% else %>
