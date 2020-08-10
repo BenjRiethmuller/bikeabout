@@ -7,6 +7,7 @@ require("@rails/ujs").start()
 require("turbolinks").start()
 require("@rails/activestorage").start()
 require("channels")
+require("flatpickr/dist/flatpickr.css")
 
 
 // Uncomment to copy all static images under ../images to the output folder and reference
@@ -21,6 +22,7 @@ require("channels")
 // Note(lewagon): ABOVE IS RAILS DEFAULT CONFIGURATION
 // WRITE YOUR OWN JS STARTING FROM HERE 👇
 // ----------------------------------------------------
+
 
 // CSS
 import 'mapbox-gl/dist/mapbox-gl.css';
