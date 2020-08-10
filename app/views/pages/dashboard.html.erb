@@ -22,14 +22,15 @@
       <div class="my-bikes-bookings">
         <% @booked_bikes.each do |bike|  %>
 
+        <% bike.bookings.each do |booking| %>
         <div class="my-bikes-card">
-          <% if bike.bookings[0].status == "Accepted" %>
+          <% if booking.status == "Accepted" %>
           <%= link_to (cl_image_tag bike.photo.key, height: 240, width: 240, crop: :fill, class: 'bike-db-image'), bike_path(bike)  %>
           <div class="bike-info-db">
             <h5 class="bike-name-db"> <%= bike.name %> </h5>
             <p class="bike-location-db"> <% split = bike.address.split(",") %> <%= split[1]%>,<%= split[3] %></p>
             <p class="bike-card-subhead">Booking dates:</p>
-            <p class="bike-dates-db"> <%= bike.bookings[0].start_date %> to <%= bike.bookings[0].end_date %></p>
+            <p class="bike-dates-db"> <%= booking.start_date %> to <%= booking.end_date %></p>
             <div class="total-price-div">
               <p class="bike-dayprice-db">Total price:</p>
               <p class="bike-dayprice-db"> <%= bike.price %>€/day</p>
@@ -39,19 +40,21 @@
           </div>
 
 
-          <% elsif bike.bookings[0].status == "Declined" %>
+          <% elsif booking.status == "Declined" %>
           <%= link_to (cl_image_tag bike.photo.key, height: 240, width: 240, crop: :fill, class: 'bike-db-image'), bike_path(bike)  %>
           <div class="bike-info-db">
             <h5 class="bike-name-db"> <%= bike.name %> </h5>
             <p class="bike-location-db"> <% split = bike.address.split(",") %> <%= split[1]%>,<%= split[3] %></p>
             <p class="bike-card-subhead">Booking dates:</p>
-            <p class="bike-dates-db"> <%= bike.bookings[0].start_date %> to <%= bike.bookings[0].end_date %></p>
+            <p class="bike-dates-db"> <%= booking.start_date %> to <%= booking.end_date %></p>
             <div class="total-price-div">
               <p class="bike-dayprice-db">Total price:</p>
               <p class="bike-dayprice-db"> <%= bike.price %>€/day</p>
             </div>
             <hr>
-            <p class="bike-status-declined">You declined this booking</p>
+            <div class="delete-declined-booking">
+              <p class="bike-status-declined">You declined this booking</p>
+            </div>
           </div>
 
           <% else %>
@@ -60,20 +63,20 @@
             <h5 class="bike-name-db"> <%= bike.name %> </h5>
             <p class="bike-location-db"> <% split = bike.address.split(",") %> <%= split[1]%>,<%= split[3] %></p>
             <p class="bike-card-subhead">Booking dates:</p>
-            <p class="bike-dates-db"> <%= bike.bookings[0].start_date %> to <%= bike.bookings[0].end_date %></p>
+            <p class="bike-dates-db"> <%= booking.start_date %> to <%= booking.end_date %></p>
             <div class="total-price-div">
               <p class="bike-dayprice-db">Total price:</p>
               <p class="bike-dayprice-db"> <%= bike.price %>€/day</p>
             </div>
             <hr>
             <div class="accept-decline">
-            <%= link_to "Accept", booking_path(id: bike.bookings[0].id, booking: {status: "Accepted"}), class: "bike-status-accepted", method: :patch %>
-            <%= link_to "Decline", booking_path(id: bike.bookings[0].id, booking: {status: "Declined"}), class: "bike-status-declined", method: :patch %>
+              <%= link_to "Accept", booking_path(id: booking.id, booking: {status: "Accepted"}), class: "bike-status-accepted", method: :patch %>
+              <%= link_to "Decline", booking_path(id: booking.id, booking: {status: "Declined"}), class: "bike-status-declined", method: :patch %>
             </div>
           </div>
-
           <% end %>
         </div>
+        <% end %>
         <% end %>
       </div>
     </div>
@@ -114,7 +117,12 @@
               <p class="bike-dayprice-db"> <%= booking.bike.price %>€/day</p>
             </div>
             <hr>
-            <p class="bike-status-declined"> BOOKING <%= booking.status.capitalize %></p>
+            <div class="delete-declined-booking">
+              <p class="bike-status-declined"> BOOKING <%= booking.status.capitalize %></p>
+              <%= link_to booking_path(booking), method: :delete, data: {confirm: "Delete this declined booking?"} do %>
+              <i class="far fa-trash-alt"></i>
+              <% end %>
+            </div>
           </div>
 
           <% else %>
@@ -150,8 +158,8 @@
             </div>
             <hr>
             <div class="book-again-review">
-            <%= link_to 'Book again', bike_path(id: booking.bike.id), class: "book-again-button"  %>
-            <%= link_to 'Review',  new_bike_review_path(bike_id: booking.bike.id), class: "book-again-button"  %>
+              <%= link_to 'Book again', bike_path(id: booking.bike.id), class: "book-again-button"  %>
+              <%= link_to 'Review',  new_bike_review_path(bike_id: booking.bike.id), class: "book-again-button"  %>
             </div>
           </div>
         </div>

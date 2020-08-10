@@ -125,6 +125,7 @@
   font-size: smaller;
   color: $rred;
   padding-right: 8px;
+  padding-top: 3px;
 }
 
 .bike-status-accepted {
@@ -168,4 +169,13 @@
 
 .my-bookings-past.active {
   display: initial;
+}
+
+.delete-declined-booking {
+  display: flex;
+  justify-content: space-between;
+}
+
+.fa-trash-alt {
+  color: $rred;
 }
