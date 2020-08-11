@@ -26,8 +26,8 @@
           </div>
         </div>
       </div>
-      <% if current_user != @bike.user  %>
       <div id='bike-booking-dates' class=" date-selector col-lg-4" data-unavailable="<%= @bike.unavailable_dates.to_json %>">
+      <% if current_user != @bike.user  %>
         <!-- ADD PRICE AND RATINGS -->
         <%= simple_form_for [@bike, @booking] do |f| %>
         <%= f.input :start_date, as: :string, type: :text, :placeholder => 'Select date', class: "start_date" %>
