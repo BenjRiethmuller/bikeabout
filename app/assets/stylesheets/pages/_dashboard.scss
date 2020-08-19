@@ -1,6 +1,8 @@
 .dashboard-div {
+  margin: auto;
   padding-top: 96px;
   display: flex;
+  width: 75vw;
   h3 {
     color: $bblue;
   }
@@ -23,11 +25,12 @@
 }
 
 .my-bikes-card {
+  position: relative;
   display: flex;
   margin-bottom: 24px;
   border-radius: 16px 16px 16px 16px;
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
-  align-items: center;
+  // align-items: center;
 }
 
 .bike-card-subhead {
@@ -41,12 +44,37 @@
 }
 
 .my-bookings-card {
+  // padding-top: 16px;
+  // padding-left: 16px;
+  // padding-right: 16px;
   display: flex;
   position: relative;
   margin-bottom: 24px;
   border-radius: 16px 16px 16px 16px;
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  // align-items: center;
+}
+
+.bike-user-photo {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+}
+
+.booker-user-photo {
+  display: flex;
   align-items: center;
+  // position: absolute;
+  // top: 8px;
+  // left: 8px;
+}
+
+.booked-by-text {
+  margin-bottom: 0px;
+  font-weight: lighter;
+  text-transform: uppercase;
+  font-size: smaller;
+  padding-left: 8px;
 }
 
 .bike-db-image {
@@ -62,8 +90,9 @@
 }
 
 .bike-info-db {
-  padding-left: 8px;
-  padding-right: 8px;
+  padding-top: 16px;
+  padding-left: 16px;
+  padding-right: 16px;
   position: relative;
   width: 286px;
 }

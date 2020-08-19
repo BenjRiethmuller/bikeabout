@@ -14,6 +14,14 @@ body {
 .banner-image h1 {
   color: $bblue;
   padding-top: 192px;
+  margin-bottom: 16px;
+  text-align: center;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+}
+
+.banner-image h5 {
+  color: $bblue;
+  // padding-top: 192px;
   text-align: center;
 }
 
@@ -42,6 +50,11 @@ body {
 .featured-bike {
   border-radius: 16px 16px 16px 16px;
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  position: relative;
+  &:hover {
+  transform: scale(1.02);
+  transition-duration: 300ms;
+  }
 }
 
 .bike-image {
@@ -51,7 +64,7 @@ body {
 .bike-details {
   background-color: white;
   border-radius: 0px 0px 16px 16px;
-  padding: 8px 16px;
+  padding: 16px 16px;
 }
 
 .bike-details p {

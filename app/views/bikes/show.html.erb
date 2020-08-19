@@ -32,10 +32,13 @@
         <%= simple_form_for [@bike, @booking] do |f| %>
         <%= f.input :start_date, as: :string, type: :text, :placeholder => 'Select date', class: "start_date" %>
         <%= f.input :end_date, as: :string, type: :text, :placeholder => 'Select date', class: "end_date" %>
+        <!-- <p><strong>Total price:</strong></p> <span id="total_price"></span> -->
         <% if user_signed_in? %>
         <%= f.submit "Request Booking", class: 'booking-button' %>
         <% else %>
-        <%= link_to "Login to request a booking", new_user_session_path, class: 'booking-button' %>
+        <button class="login-to-book-button">
+        <%= link_to "Login to request a booking", new_user_session_path %>
+        </button>
         <% end %>
         <% end %>
         <% else %>

@@ -5,16 +5,17 @@
     <div class="logged-in-btns">
       <%= link_to "List a Bike", new_bike_path, class: "list-a-bike-button"  %>
       <!-- <div class="avatar-dropdown"> -->
-        <div class="dropdown">
+      <%= link_to "Dashboard", dashboard_path, class: "avatar-dropdown" %>
+      <div class="vr"></div>
+      <%= link_to "Sign Out", destroy_user_session_path, method: :delete, class: "sign-out" %>
+<!--         <div class="dropdown">
         <button class="avatar-dropdown">
           <p> <%= current_user.username %> </p>
           <%= cl_image_tag current_user.photo.key, class: "avatar-navbar" %>
         </button>
         <div class="dropdown-content">
-          <%= link_to "Dashboard", dashboard_path %>
-          <%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
         </div>
-        </div>
+        </div> -->
       <!-- </div> -->
     </div>
     <% else %>
@@ -29,5 +30,3 @@
     <% end %>
   </div>
 </div>
-
-

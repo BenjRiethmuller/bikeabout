@@ -1,6 +1,6 @@
 <div class="banner">
   <div class="banner-image">
-    <h1>Rent a bike and explore like a local!</h1>
+    <h1>Rent a bike and explore like a local on your next holiday!</h1>
   <%= render 'shared/search' %>
   </div>
 </div>
@@ -12,6 +12,9 @@
     <% bike_shuffle.each do |bike| %>
     <div class="featured-bike">
       <%=  link_to (cl_image_tag bike.photo.key, height: 260, width: 380, crop: :fill, class: 'bike-image'), bike_path(bike) %>
+      <div class="bike-user-photo">
+      <%= cl_image_tag bike.user.photo.key, width: 40, height: 40, crop: :fill, class: 'avatar-small'%>
+      </div>
       <div class="bike-details">
         <h5> <%= bike.name %> </h5>
         <% split = bike.address.split(",") %>
