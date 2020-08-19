@@ -2,6 +2,10 @@ button:focus {
   outline: none;
 }
 
+a:hover {
+  text-decoration: none;
+}
+
 .price-button {
   color: $ggrey;
   border: 1px solid $ggrey;
@@ -33,8 +37,25 @@ button:focus {
   width: 100%;
   height: 48px;
   border-style: none;
+  &:hover {
+    opacity: 90%;
+  }
 }
 
+.login-to-book-button {
+  background-color: $bblue;
+  border-radius: 16px;
+  width: 100%;
+  height: 48px;
+  border-style: none;
+  text-align: center;
+  a {
+      color: white;
+  }
+  &:hover {
+    opacity: 80%;
+  }
+}
 
 
 .all-button {
@@ -145,4 +166,5 @@ button:focus {
 .forgot-password {
   color: $bblue;
 }
+
 

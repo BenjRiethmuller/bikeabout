@@ -20,6 +20,10 @@
   position: absolute;
   right: 24px;
   top: 8px;
+  &:hover {
+    background-color: $bblue;
+    opacity: 90%;
+  }
 }
 
 .searchbar-button:hover {

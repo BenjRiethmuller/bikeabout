@@ -1,8 +1,3 @@
-// .index-container {
-//   padding-top: 70px;
-//   height: calc(100vh - 70px);
-// }
-
 .no-results {
   padding-top: 160px;
   color: $bblue;
@@ -17,31 +12,33 @@
   color: $ggrey;
 }
 
-.results-map-div {
-  display: flex;
-}
-
 .results-cards {
   display: flex;
+  margin-left: auto;
+  margin-right: auto;
   margin-bottom: 24px;
-  width: 700px;
+  width: 85%;
   height: 210px;
   border-radius: 16px 16px 16px 16px;
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  &:hover {
+  transform: scale(1.03);
+  transition-duration: 300ms;
+  }
 }
 
-.bike-result-cards {
-  padding-left: 12px;
-  padding-right: 0px;
+.bike-result-count {
+  margin: auto;
 }
 
-.bike-results-div {
-  vertical-align: middle;
-}
+// .bike-results-div {
+//   vertical-align: middle;
+// }
 
 .bike-results-div h3 {
-  margin-left: 14px;
+  margin-left: 12px;
   padding-top: 96px;
+  padding-bottom: 16px;
   color: $bblue;
 }
 
@@ -52,9 +49,9 @@
 
 .bike-info {
   position: relative;
-  width: 400px;
+  width: 80%;
   height: 210px;
-  padding: 16px 8px;
+  padding: 16px 16px;
   // border-radius: 0px 16px 16px 0px;
   // box-shadow: 2px 2px 4px $ggrey;
 }
@@ -85,8 +82,8 @@
 
 .bike-price-text {
   position: absolute;
-  right: 8px;
-  bottom: -8px;
+  right: 16px;
+  bottom: 0px;
   color: $ggrey;
   font-weight: bolder;
   text-align: right;
