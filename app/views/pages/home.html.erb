@@ -5,13 +5,14 @@
   </div>
 </div>
 
+<div class="container">
 <div class="featured-bikes-div">
   <h3>Featured bikes this week</h3>
   <div class="featured-bikes">
     <% bike_shuffle = @bikes.shuffle[0..2] %>
     <% bike_shuffle.each do |bike| %>
     <div class="featured-bike">
-      <%=  link_to (cl_image_tag bike.photo.key, height: 260, width: 380, crop: :fill, class: 'bike-image'), bike_path(bike) %>
+      <%=  link_to (cl_image_tag bike.photo.key, height: 220, width: 330, crop: :fill, class: 'bike-image'), bike_path(bike) %>
       <div class="bike-user-photo">
       <%= cl_image_tag bike.user.photo.key, width: 40, height: 40, crop: :fill, class: 'avatar-small'%>
       </div>
@@ -24,28 +25,31 @@
     <% end %>
   </div>
 </div>
+</div>
 
 <div class="how-it-works-div">
+  <div class="container">
   <h3>How it works</h3>
-  <div class="find-bike">
+  <div class="find-bike col-lg-10">
     <%= image_tag ("location.jpg"), class: "find-bike-image" %>
     <div class="find-bike-text">
       <h1>Find a bike</h1>
       <p>Enter your destination and browse Bikeabout's wide selection of bikes.</p>
     </div>
   </div>
-  <div class="message-owner">
+  <div class="message-owner col-lg-10">
     <div class="message-owner-text">
       <h1>Contact the owner</h1>
       <p>Request a booking and contact the owner of the bike to agree on a price, pickup location and time.</p>
     </div>
     <%= image_tag ("message.jpg"), class: "message-owner-image" %>
   </div>
-  <div class="explore">
+  <div class="explore col-lg-10">
     <%= image_tag ("explore.jpg"), class: "explore-image" %>
     <div class="explore-text">
       <h1>Explore the city</h1>
       <p>Enhance your holiday through cycling and experience the city like a local</p>
     </div>
+  </div>
   </div>
 </div>
