@@ -118,3 +118,19 @@
   padding-top: 24px;
   // border: 1px solid $bblue;
 }
+
+@media(max-width: 1420px) {
+  .bike-index-image {
+    width: 225px;
+    height: 210px;
+    object-fit: cover;
+  }
+}
+
+@media(max-width: 1180px) {
+  .bike-index-image {
+  width: 200px;
+  height: 210px;
+  object-fit: cover;
+}
+}
