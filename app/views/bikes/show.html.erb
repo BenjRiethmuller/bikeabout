@@ -11,7 +11,7 @@
     <div class="bike-information col-lg-4">
       <div class="bike-user-info">
         <div class="name-address">
-          <p class="bike-name-small"> <%= @bike.name %></p>
+          <p class="bike-name-small"> <%= @bike.name %> &nbsp; </p>
           <p class="bike-address-small"> <% split = @bike.address.split(",") %> <%=  split[1]%>,<%= split[3] %></p>
         </div>
         <p class="bike-description"> <%= @bike.description %></p>
@@ -25,8 +25,8 @@
         </div>
       </div>
       <hr>
+      <% if current_user != @bike.user  %>
       <div id='bike-booking-dates' class=" date-selector" data-unavailable="<%= @bike.unavailable_dates.to_json %>">
-        <% if current_user != @bike.user  %>
         <!-- ADD PRICE AND RATINGS -->
         <%= simple_form_for [@bike, @booking] do |f| %>
         <%= f.input :start_date, as: :string, type: :text, :placeholder => 'Select date', class: "start_date" %>
@@ -40,8 +40,6 @@
         </button>
         <% end %>
         <% end %>
-        <% else %>
-        <p>Need to put something here..</p>
         <% end %>
       </div>
     </div>

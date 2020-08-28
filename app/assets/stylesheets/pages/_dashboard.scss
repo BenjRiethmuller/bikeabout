@@ -173,6 +173,43 @@
   .my-bookings {
     max-width: 100%
   }
+
+  .my-bikes-all {
+    .my-bikes-card {
+      .bike-db-image {
+        width: 240px;
+        height: 180px;
+        object-fit: cover;
+      }
+    }
+  }
+  .my-bikes-bookings {
+    .my-bikes-card {
+      .bike-db-image {
+        width: 240px;
+        height: 290px;
+        object-fit: cover;
+      }
+    }
+  }
+  .my-bookings-upcoming {
+    .my-bookings-card {
+      .bike-db-image {
+        width: 240px;
+        max-height: 260px;
+        object-fit: cover;
+      }
+    }
+  }
+  .my-bookings-past {
+    .my-bookings-card {
+      .bike-db-image {
+        width: 240px;
+        height: 230px;
+        object-fit: cover;
+      }
+    }
+  }
 }
 
 // @media(max-width: 1420px) {
