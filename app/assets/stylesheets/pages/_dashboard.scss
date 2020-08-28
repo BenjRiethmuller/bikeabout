@@ -34,8 +34,8 @@
 }
 
 .bike-card-subhead {
-    margin-bottom: 0px;
-    text-decoration: underline;
+  margin-bottom: 0px;
+  text-decoration: underline;
 }
 
 .total-price-div {
@@ -81,6 +81,141 @@
   border-radius: 16px 0px 0px 16px;
 }
 
+// DASHBOARD QUERIES
+
+@media(max-width: 1420px) {
+  .my-bikes-all {
+    .my-bikes-card {
+      .bike-db-image {
+        width: 225px;
+        height: 205px;
+        object-fit: cover;
+      }
+    }
+  }
+  .my-bikes-bookings {
+    .my-bikes-card {
+      .bike-db-image {
+        width: 225px;
+        height: 320px;
+        object-fit: cover;
+      }
+    }
+  }
+  .my-bookings-upcoming {
+    .my-bookings-card {
+      .bike-db-image {
+        width: 225px;
+        height: 320px;
+        object-fit: cover;
+      }
+    }
+  }
+  .my-bookings-past {
+    .my-bookings-card {
+      .bike-db-image {
+        width: 225px;
+        height: 320px;
+        object-fit: cover;
+      }
+    }
+  }
+}
+
+@media(max-width: 1180px) {
+  .my-bikes-all {
+    .my-bikes-card {
+      .bike-db-image {
+        width: 140px;
+        height: 180px;
+        object-fit: cover;
+      }
+    }
+  }
+  .my-bikes-bookings {
+    .my-bikes-card {
+      .bike-db-image {
+        width: 140px;
+        height: 290px;
+        object-fit: cover;
+      }
+    }
+  }
+  .my-bookings-upcoming {
+    .my-bookings-card {
+      .bike-db-image {
+        width: 140px;
+        max-height: 260px;
+        object-fit: cover;
+      }
+    }
+  }
+  .my-bookings-past {
+    .my-bookings-card {
+      .bike-db-image {
+        width: 140px;
+        height: 230px;
+        object-fit: cover;
+      }
+    }
+  }
+}
+
+@media(max-width: 992px) {
+  .dashboard-div {
+    display: block;
+  }
+
+  .my-bikes {
+    max-width: 100%
+  }
+
+  .my-bookings {
+    max-width: 100%
+  }
+}
+
+// @media(max-width: 1420px) {
+//   .my-bikes-all {
+//     .my-bikes-card {
+//       .bike-db-image {
+//         width: 250px;
+//         height: 205px;
+//         object-fit: cover;
+//       }
+//     }
+//   }
+//   .my-bikes-bookings {
+//     .my-bikes-card {
+//       .bike-db-image {
+//         width: 250px;
+//         height: 320px;
+//         object-fit: cover;
+//       }
+//     }
+//   }
+//   .my-bookings-upcoming {
+//     .my-bookings-card {
+//       .bike-db-image {
+//         width: 250px;
+//         height: 320px;
+//         object-fit: cover;
+//       }
+//     }
+//   }
+//   .my-bookings-past {
+//     .my-bookings-card {
+//       .bike-db-image {
+//         width: 250px;
+//         height: 320px;
+//         object-fit: cover;
+//       }
+//     }
+//   }
+// }
+
+
+
 .bookings-toggle {
   display: flex;
   padding-left: 2px;
@@ -93,8 +228,11 @@
   padding-top: 16px;
   padding-left: 16px;
   padding-right: 16px;
+  padding-bottom: 16px;
   position: relative;
   width: 286px;
+  // min-width: 254px;
+  // min-height: 254px;
 }
 
 .bike-name-db {

@@ -1,20 +1,25 @@
 .name-price {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 8px;
+  // margin-bottom: 8px;
   margin: auto;
+  padding: 0px;
   // margin-left: 32px;
   // margin-right: 32px;
 }
 
 .bike-image {
-  margin: auto;
+  // margin: auto;
   padding-left: 0px;
-  padding-right: 0px;
+  // padding-right: 0px;
   // margin-left: 32px;
   // margin-right: 32px;
 }
 
+.bike-show-div {
+  display: flex;
+  padding-top: 8px;
+}
 .name-price h3 {
   margin-top: 96px;
 }
@@ -42,7 +47,7 @@
 .bike-information {
   color: $ggrey;
   margin: auto;
-  padding: 0px;
+  padding-right: 0px;
   // margin-left: 32px;
   // margin-right: 32px;
 }
@@ -64,9 +69,9 @@
   margin-bottom: 0px;
 }
 
-.name-address {
-  display: flex;
-}
+// .name-address {
+//   display: flex;
+// }
 
 .name-address p {
   margin-bottom: 0px;
@@ -86,8 +91,9 @@
   background-color: white;
   border-radius: 16px;
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
-  padding-top: 15px;
-  padding-bottom: 15px;
+  // padding-top: 15px;
+  // padding-bottom: 15px;
+  padding: 16px;
 }
 
 // REVIEWS SECTION
@@ -102,12 +108,13 @@
 .review-header h3 {
   margin-top: 48px;
   color: $bblue;
+  padding-bottom: 16px;
 }
 
 .bike-reviews {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-gap: 16px;
+  grid-gap: 32px;
 }
 
 .review-tile {
